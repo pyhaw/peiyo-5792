@@ -42,7 +42,7 @@ export default function Table() {
   return (
     <ul
       role="list"
-      className="divide-y divide-gray-100 bg-gray-300 px-2 rounded-md mx-6 my-4"
+      className="divide-y divide-gray-100 bg-gray-300 px-2 rounded-md mx-10 my-4"
     >
       {events.map((event) => (
         <li key={event.name} className="flex justify-start gap-x-6 py-5">
