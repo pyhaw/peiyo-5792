@@ -1,11 +1,10 @@
-import Navbar from '../pages/components/navbar';
+import Navbar from "../components/navbar";
 
-export default function Format({children}) {
+export default function Format({ children }) {
   return (
-  <main class="min-h-screen bg-gray-800">
-    <Navbar>
-    </Navbar>
-    {children}
-  </main>
-  )
+    <main class="min-h-screen bg-gray-800">
+      <Navbar></Navbar>
+      {children}
+    </main>
+  );
 }

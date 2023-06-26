@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import Image from "next/image";
-import pic from "../../images/ban1.jpg";
+import pic from "../images/ban1.jpg";
 
 export default function Slide() {
   return (
