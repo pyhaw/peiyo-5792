@@ -1,5 +1,5 @@
 import Image from "next/image";
-import pic from "../images/IMG_2405.jpg"
+import pic from "../images/IMG_2405.JPG"
 
 
 export default function menu() {
