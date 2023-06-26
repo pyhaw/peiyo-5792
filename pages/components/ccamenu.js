@@ -7,7 +7,7 @@ export default function menu() {
   <section id="grid"
     class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">
@@ -17,7 +17,7 @@ export default function menu() {
           </a>
       </div>
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">
@@ -27,7 +27,7 @@ export default function menu() {
           </a>
       </div>
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">
@@ -37,7 +37,7 @@ export default function menu() {
           </a>
       </div>
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">
@@ -47,7 +47,7 @@ export default function menu() {
           </a>
       </div>      
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">
@@ -57,7 +57,7 @@ export default function menu() {
           </a>
       </div>      
       <div class="w-72 bg-white shadow-md rounded-2xl duration-500 hover:scale-105 hover:shadow-xl">
-          <a href="#">
+          <a href="./eachCCA">
               <Image src={pic}
                       alt="cca" class="h-48 w-72 object-cover rounded-t-xl" />
               <div class="px-4 py-3 w-72">

@@ -3,7 +3,7 @@ export default function Timeline() {
     <div class="my-2 mx-6 ">
       <div class="my-2 mx-6 flex items-center justify-center">
         <h2 class="mb-4 text-xl  font-semibold text-white bg-blue-900 w-72 text-center p-2 rounded-md">
-          CCA Registration
+          CCA Registration Timeline
         </h2>
       </div>
       <div class="my-2 ml-2 mr-10 flex items-center justify-center">
