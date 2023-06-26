@@ -1,6 +1,6 @@
 import Image from "next/image";
 import pic1 from "../images/IMG_2445.jpg"
-import pic2 from "../images/IMG_2405.jpg"
+import pic2 from "../images/IMG_2405.JPG"
 import pic3 from "../images/IMG_3.jpeg"
 
 export default function Cards() {
