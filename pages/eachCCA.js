@@ -48,7 +48,7 @@ export default function CCApage() {
           </h1>
           <div className="grid md:grid-cols-12 gap-4 mx-20 px-10 mt-9 mb-4">
             <div className="col-span-3">
-              <button className="bg-orange-900 hover:bg-orange-700 text-white font-bold py-2 px-16 border border-orange-700 rounded mb-6">
+              <button onClick={() => router.push("/bookslot")} className="bg-orange-900 hover:bg-orange-700 text-white font-bold py-2 px-16 border border-orange-700 rounded mb-6">
                 Sign up
               </button>
               <p> Member : {cca.member} </p>
