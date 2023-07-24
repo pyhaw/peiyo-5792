@@ -26,7 +26,9 @@ export default function CCASearch() {
       </Head>
       <Format>
         <h1 className="text-center mt-12 font-bold text-3xl">{title}</h1>
-        {selectedIndex !== undefined ? <Menu index={selectedIndex} /> : null}
+        {selectedIndex >= 0 && selectedIndex < CCAType.length ? (
+          <Menu index={selectedIndex} />
+        ) : null}
       </Format>
     </>
   );

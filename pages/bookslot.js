@@ -90,19 +90,21 @@ export default function bookSlot() {
         <title>Book interview slot</title>
       </Head>
       <Format>
-        <h1 class="text-center mt-12 font-semibold text-3xl">Choose your interview slot</h1>
-        <h1 class="text-center mt-2 font-semibold text-3xl">for {pos.cca} {pos.comm} {pos.lev}</h1>
-        <div className="grid grid-cols-2">
-        {allslots.filter(x=>x.avail).map(x =>
-        <div className="mx-6 mb-10">
-        <p class="mt-10 text-xl font-semibold tracking-tight text-gray-300 text-center"> {x.date} </p>
-        <div class="container mx-auto sm:flex-row items-center justify-center gap-4 max-w-xl">
-        {x.slots.filter(x => x.bookedBy == null).map(y => <Option {...y}/>)}
+  <h1 className="text-center mt-12 font-semibold text-3xl">Choose your interview slot</h1>
+  <h1 className="text-center mt-2 font-semibold text-3xl">for {pos.cca} {pos.comm} {pos.lev}</h1>
+  <div className="grid grid-cols-2">
+    {allslots.filter(x => x.avail).map((x, index) => (
+      <div className="mx-6 mb-10" key={index}>
+        <p className="mt-10 text-xl font-semibold tracking-tight text-gray-300 text-center">{x.date}</p>
+        <div className="container mx-auto sm:flex-row items-center justify-center gap-4 max-w-xl">
+          {x.slots.filter(slot => slot.bookedBy == null).map((y, idx) => (
+            <Option {...y} key={idx} />
+          ))}
         </div>
-        </div>
-        )}
-        </div>
-      </Format>
+      </div>
+    ))}
+  </div>
+</Format>
     </>
   );
 }
