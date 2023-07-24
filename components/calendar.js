@@ -20,7 +20,6 @@ export default function Calendar() {
                                 <polyline points="9 6 15 12 9 18" />
                             </svg>
                         </button>
-
                         </div>
                     </div>
                     <div class="flex items-center justify-between pt-12 overflow-x-auto">
