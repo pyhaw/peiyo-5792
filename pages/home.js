@@ -1,12 +1,16 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useContext } from "react";
 import Head from "next/head";
 
 import Banner from "../components/banner";
 import Format from "../components/format";
 import Table from "../components/upcoming";
 import Timeline from "../components/timeline";
+import { FirebaseContext } from "@/context/firebase-context";
+import { db } from "@/firebase.config";
 
 export default function Home() {
+  const { user, details, checkUserDetails } = useContext(FirebaseContext);
+
   return (
     <Fragment>
       <Head>
@@ -30,3 +34,4 @@ export default function Home() {
     </Fragment>
   );
 }
+

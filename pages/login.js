@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { authentication } from "@/firebase.config";
+import { FirebaseContext } from "@/context/firebase-context";
+import { db } from "@/firebase.config";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,16 +13,21 @@ export default function Login() {
 
   const router = useRouter();
 
-  const signInUser = async (e) => {
-    e.preventDefault();
+  const { detail, setUser, checkUserDetails } = useContext(FirebaseContext);
 
+  const signInUser = async (e) => {
     try {
       const result = await signInWithEmailAndPassword(
         authentication,
         email,
         password
-      );
-      router.push("/home");
+      )
+        .then((userCredentials) => setUser(userCredentials.user))
+        .then(() =>
+          router.push({
+            pathname: "/home",
+          })
+        );
     } catch (error) {
       console.log(error);
     }
@@ -79,10 +86,13 @@ export default function Login() {
           </div>
 
           <div>
-            <Link href="/index">
+            <Link href="/home">
               <button
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                onClick={signInUser}
+                onClick={() => {
+                  checkUserDetails(db, email);
+                  signInUser(authentication, email, password);
+                }}
               >
                 Log In
               </button>

@@ -1,3 +1,5 @@
+import React, { useState, useContext } from "react";
+
 import Head from "next/head";
 import Format from "../layout/format";
 import SearchBar from "../components/searchbar.js";

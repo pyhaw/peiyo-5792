@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { authentication } from "@/firebase.config";
+import { db } from "@/firebase.config";
+import { FirebaseContext } from "@/context/firebase-context";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -11,13 +13,26 @@ function Signup() {
 
   const router = useRouter();
 
+  const { setUser, registerLeaderFirestore, registerMemberFirestore } =
+    useContext(FirebaseContext);
+
   const registerUser = async () => {
     try {
-      await createUserWithEmailAndPassword(authentication, email, password);
+      await createUserWithEmailAndPassword(
+        authentication,
+        email,
+        password
+      ).then((userCredentials) => setUser(userCredentials.user));
       router.push("/");
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const userDetails = {
+    email: email,
+    status: "leader",
+    CCA: "dansheares",
   };
 
   return (
@@ -77,7 +92,10 @@ function Signup() {
             <Link href="/login">
               <button
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                onClick={() => registerUser(authentication, email, password)}
+                onClick={() => {
+                  registerUser(authentication, email, password);
+                  registerLeaderFirestore(db, userDetails);
+                }}
               >
                 Sign Up
               </button>
