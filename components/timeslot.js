@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FirebaseContext } from "@/context/firebase-context";
 import { db } from "@/firebase.config";
 
@@ -18,6 +18,10 @@ export default function Option({ slot, date, CCA }) {
       setIsBooked(true);
     }
   };
+
+  useEffect(() => {
+    setIsBooked(false);
+  }, [date]);
 
   return (
     <div className="duration-300 hover:scale-105 hover:shadow-xl justify-center mt-6 mx-2 max-w-5xl bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
