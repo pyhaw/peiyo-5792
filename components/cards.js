@@ -5,7 +5,7 @@ import pic2 from "../images/IMG_2405.JPG";
 import Link from "next/link";
 
 export default function Cards() {
-  const CCAtype = ["Comittee", "Cultural", "Sports"];
+  const CCAtype = ["Committee", "Cultural", "Sports"];
   const router = useRouter();
 
   return (
